@@ -2,27 +2,17 @@
   "rules": {
     ".read": false,
     ".write": false,
-    "approvedUsers": {
-      ".read": "auth != null && auth.token.email_verified === true && root.child('adminUids').child(auth.uid).val() === true",
-      "$username": {
-        ".read": true,
-        ".write": "auth != null && auth.token.email_verified === true && root.child('adminUids').child(auth.uid).val() === true",
-        ".validate": "newData.hasChildren(['username','approved']) && newData.child('username').isString() && newData.child('username').val().length <= 80 && newData.child('approved').val() === true",
-        "username": {
-          ".validate": true
-        },
-        "approved": {
-          ".validate": true
-        },
-        "$other": {
-          ".validate": false
-        }
-      }
-    },
     "adminUids": {
       "$uid": {
         ".read": "auth != null && auth.uid === $uid",
         ".write": false
+      }
+    },
+    "approvedUsers": {
+      ".read": "auth != null && root.child('adminUids').child(auth.uid).val() === true",
+      ".write": "auth != null && root.child('adminUids').child(auth.uid).val() === true",
+      "$username": {
+        ".read": true
       }
     }
   }

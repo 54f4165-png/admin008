@@ -1,0 +1,21 @@
+XOAIP USER + ADMIN — Firebase admin008-75abc
+
+Realtime Database:
+https://admin008-75abc-default-rtdb.asia-southeast1.firebasedatabase.app
+
+CẤU TRÚC:
+adminUids/s5mlhn6PRMMqMTvq0S9Y3rZuFJc2 = true (Boolean)
+approvedUsers/<ten-tai-khoan-chuan-hoa> = { "username": "...", "approved": true }
+
+1. Firebase Console > Authentication > Sign-in method: bật Email/Password.
+2. Tài khoản ADMIN phải có UID: s5mlhn6PRMMqMTvq0S9Y3rZuFJc2, và emailVerified = true.
+3. Firebase Console > Realtime Database > Rules: sao chép database.rules.json và Publish.
+4. Triển khai USER và ADMIN thành hai dự án Vercel riêng. Đảm bảo index.html ở thư mục gốc.
+5. Đăng nhập ADMIN, thêm test123, thử kiểm tra ở USER. Sau đó xóa và kiểm tra lại.
+
+LƯU Ý BẢO MẬT:
+Rules này cho phép người truy cập không đăng nhập đọc từng tên tài khoản nếu biết hoặc đoán được tên.
+Không cho người ngoài ghi dữ liệu. Nếu cần chống dò tên, phải chuyển xác minh qua backend
+(Cloud Functions/App Check + rate limiting) thay vì cho USER đọc trực tiếp.
+Không ghi mật khẩu ADMIN vào file HTML.
+Đây là bản đã cấu hình và kiểm tra mã tĩnh, chưa thử đăng nhập trực tiếp Firebase của bạn.

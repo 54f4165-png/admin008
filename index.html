@@ -3,7 +3,7 @@ import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.14.1/firebase
 import {getAuth,signInWithEmailAndPassword,onAuthStateChanged,signOut,sendPasswordResetEmail,sendEmailVerification,setPersistence,browserSessionPersistence} from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import {getDatabase,ref,get,onValue,set,remove} from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js';
 // Firebase Web configuration is public by design; authorization is enforced by Database Rules.
-const firebaseConfig={apiKey:'AIzaSyAsXY9e2jDYnuuisfopPnaNZ8cl982aj1Q',authDomain:'admin008-75abc.firebaseapp.com',databaseURL:'https://admin008-75abc-default-rtdb.asia-southeast1.firebasedatabase.app',projectId:'admin008-75abc',storageBucket:'admin008-75abc.firebasestorage.app',messagingSenderId:'330786436608',appId:'1:330786436608:web:8527809f313eecbfa1cae5',measurementId:'G-0YKEDXH72E'};
+const firebaseConfig={"apiKey":"AIzaSyAsXY9e2jDYnuuisfopPnaNZ8cl982aj1Q","authDomain":"admin008-75abc.firebaseapp.com","databaseURL":"https://admin008-75abc-default-rtdb.asia-southeast1.firebasedatabase.app","projectId":"admin008-75abc","storageBucket":"admin008-75abc.firebasestorage.app","messagingSenderId":"330786436608","appId":"1:330786436608:web:8527809f313eecbfa1cae5","measurementId":"G-0YKEDXH72E"};
 // Không lưu tài khoản/mật khẩu ADMIN trong file HTML.
 const $=id=>document.getElementById(id),msg=s=>$('msg').textContent=s;
 let unsubscribe=null,entries=[];
