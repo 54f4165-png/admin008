@@ -1,0 +1,14 @@
+XOAIP ADMIN — ĐĂNG NHẬP KHÔNG YÊU CẦU XÁC MINH EMAIL
+
+Dự án Firebase: admin008-75abc
+
+1. Firebase Console > Authentication > Sign-in method: bật Email/Password.
+2. Tạo tài khoản email/password trong Authentication > Users. Có thể dùng địa chỉ email giả cho mục đích thử nghiệm, nhưng phải có dạng email hợp lệ và không thể nhận email xác minh hoặc khôi phục mật khẩu.
+3. Trong Realtime Database > Data, thêm adminUids/<UID THỰC> = true (Boolean).
+4. Database Rules phải kiểm tra adminUids/<auth.uid> khi đọc/ghi approvedUsers.
+5. Đăng nhập bằng email/mật khẩu đã tạo. Không yêu cầu emailVerified.
+6. Triển khai index.html lên Vercel; không cần thay đổi website USER.
+
+BẢO MẬT: Mật khẩu không được lưu trong mã HTML. Dùng mật khẩu mạnh, không dùng 123456. Nếu sử dụng email giả, chức năng Quên mật khẩu sẽ không thể nhận thư; hãy cân nhắc email thật hoặc tài khoản khôi phục riêng cho hệ thống dùng lâu dài.
+
+Nếu gặp auth/too-many-requests, phải chờ Firebase gỡ giới hạn; sửa HTML không thể vượt giới hạn này.
