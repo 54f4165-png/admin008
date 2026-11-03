@@ -1,0 +1,17 @@
+XOAIP - HƯỚNG DẪN KẾT NỐI FIREBASE admin008-75abc
+
+Cấu hình Firebase App đã được cập nhật trong CẢ USER và ADMIN.
+CÒN 1 BƯỚC BẮT BUỘC: Lấy Realtime Database URL thật.
+
+1. Mở Firebase Console > admin008-75abc > Build > Realtime Database.
+2. Nếu chưa tạo database, chọn Create database và chọn khu vực.
+3. Sao chép URL hiện trên trang Realtime Database (dạng https://...firebasedatabase.app hoặc https://...firebaseio.com).
+4. Mở index.html của USER và ADMIN; thay đúng chuỗi DAN_URL_REALTIME_DATABASE_VAO_DAY bằng URL đó.
+5. Firebase Authentication > Sign-in method > bật Email/Password; tạo tài khoản ADMIN trong Users.
+6. Trong Realtime Database, cấp quyền adminUids/<UID>=true bằng Firebase Console (không cấp từ trình duyệt USER).
+7. Xem kỹ database.rules.json, thử trên Rules Playground trước khi Publish.
+8. Triển khai USER và ADMIN như 2 dự án riêng trên Vercel.
+
+LƯU Ý: Nếu chưa có databaseURL thật, các trang sẽ KHÔNG kết nối được cơ sở dữ liệu.
+Dữ liệu approvedUsers của dự án gg88-web cũ KHÔNG tự chuyển sang dự án mới.
+Đừng đưa mật khẩu ADMIN hoặc khóa dịch vụ Firebase Admin SDK vào HTML.
