@@ -1,0 +1,15 @@
+XOAIP ADMIN — bản cải thiện đăng nhập
+
+Firebase: admin008-75abc
+Email điền sẵn: td@gmail.com (KHÔNG lưu mật khẩu vào HTML)
+
+LƯU Ý: Không thể đặt lại mật khẩu Firebase bằng cách sửa HTML.
+Bạn phải đặt mật khẩu trong Firebase Authentication hoặc dùng Reset password.
+Nếu mật khẩu 123456 đã được chia sẻ, hãy đổi sang mật khẩu mạnh, duy nhất.
+
+Lỗi auth/too-many-requests là giới hạn ở máy chủ Firebase; thay file ADMIN không thể tự gỡ khóa.
+Hãy ngừng gửi yêu cầu, chờ gỡ giới hạn rồi đăng nhập một lần.
+Tài khoản phải xác minh email, UID phải nằm trong adminUids/<UID>: true.
+Cần Publish database.rules.json trên Firebase Realtime Database → Rules.
+
+Chức năng USER không thay đổi. Kiểm tra đăng nhập, thêm test123, kiểm tra USER, rồi xóa test123.
