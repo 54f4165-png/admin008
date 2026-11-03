@@ -1,0 +1,18 @@
+XOAIP ADMIN — BẢO MẬT NÂNG CAO (Firebase admin008-75abc)
+
+1. Firebase Console > Authentication > Sign-in method: bật Email/Password.
+2. Authentication > Users: tạo tài khoản ADMIN bằng email thật và mật khẩu dài, duy nhất. Không ghi mật khẩu trong HTML.
+3. Xác minh email: đăng nhập trang ADMIN, chọn GỬI EMAIL XÁC MINH, mở email, xác minh rồi đăng xuất và đăng nhập lại.
+4. Authentication > Users: sao chép UID của tài khoản ADMIN.
+5. Realtime Database > Data: thêm adminUids/<UID> = true (Boolean) trực tiếp trong Firebase Console. Không thêm UID vào website USER.
+6. Realtime Database > Rules: sao lưu rules hiện tại, dán database.rules.json, kiểm tra rồi Publish. CẢNH BÁO: các ứng dụng khác dùng cùng database có thể bị ảnh hưởng.
+7. Triển khai riêng index.html lên Vercel (trang ADMIN). Đảm bảo HTTPS.
+8. Kiểm thử: ADMIN chưa xác minh email không truy cập được; tài khoản khác dù biết URL không sửa được approvedUsers; USER chỉ đọc được approvedUsers/<username>.
+9. Trong Firebase Authentication > Settings > Password policy: bật chính sách mật khẩu mạnh, bật email enumeration protection nếu có. Bật MFA cho ADMIN khi Firebase Identity Platform hỗ trợ và đã cấu hình đầy đủ.
+10. Vercel: bảo vệ deployment preview, bật 2FA cho tài khoản quản lý.
+
+QUAN TRỌNG:
+- Không có tài khoản/mật khẩu mặc định trong ZIP. Bạn tự tạo trong Firebase Authentication.
+- Không dùng .read=true trên toàn database; rules mẫu chỉ cho phép tra cứu từng approvedUsers/<username>. Điều này vẫn cho phép dò tên tài khoản, nên nếu cần bảo mật danh sách tuyệt đối, cần chuyển tra cứu sang backend có kiểm soát.
+- Firebase Web apiKey không phải mật khẩu; bảo mật dựa trên Auth và Rules.
+- Cấu hình này chưa được kiểm tra trực tiếp trên Firebase của bạn và không tự Publish Rules.
