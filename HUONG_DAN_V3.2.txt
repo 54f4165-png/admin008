@@ -1,0 +1,5 @@
+XOAIP ADMIN v3.2
+- Tin nhắn cuộn trong khung cố định, không kéo dài trang.
+- Ô tìm kiếm dò toàn bộ tin nhắn của tất cả hội thoại mà ADMIN có quyền xem; hiển thị đoạn khớp.
+- Giữ Firebase Spark, Cloudinary, badge chưa đọc, phóng to ảnh, tự cuộn khi mở chat.
+- Sao chép index.html và xoaip-chat.js vào repository ADMIN, commit và push.
